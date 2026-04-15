@@ -3,7 +3,7 @@
           height: max-content;
           width: max-content;
           display: inline-block;
-          color: var(--rts-heading);
+          color: var(--heading-color);
           padding: 9px 18px;
           font-size: 14px;
           font-family: var(--font-primary);
@@ -37,7 +37,7 @@
      }
 
      .heading-title {
-          color: var(--rts-black);
+          color: var(--rts-heading);
           font-size: 56px;
           font-family: var(--font-primary);
           font-weight: var(--f-semi-bold);
@@ -65,7 +65,7 @@
      }
 
      .heading-title-two {
-          color: var(--rts-black);
+          color: var(--rts-heading);
           font-size: 48px;
           font-family: var(--font-primary);
           font-weight: var(--f-medium);
@@ -93,7 +93,7 @@
      }
 
      .heading-title-three {
-          color: var(--rts-black);
+          color: var(--rts-heading);
           font-size: 56px;
           font-family: var(--font-primary);
           font-weight: var(--f-semi-bold);

@@ -36,9 +36,8 @@ All CSS Structure Follow this Order
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 :root {
   /* Text Color */
-  --rts-para: #666666;
-  --rts-heading: #002524;
-  --rts-heading-2: #212121;
+  --rts-para: #6B7280;
+  --rts-heading: #111827;
   --rts-black: #000000;
   --rts-white: #ffffff;
   --rts-neon: #7EEA57;
@@ -322,7 +321,7 @@ h5,
 h6,
 .h6 {
   color: var(--rts-heading);
-  font-weight: 500;
+  font-weight: var(--f-semi-bold);
   font-family: var(--font-primary);
 }
 
@@ -14149,7 +14148,7 @@ textarea:focus-visible, input:focus-visible {
   height: max-content;
   width: max-content;
   display: inline-block;
-  color: var(--rts-heading);
+  color: var(--heading-color);
   padding: 9px 18px;
   font-size: 14px;
   font-family: var(--font-primary);
@@ -14180,7 +14179,7 @@ textarea:focus-visible, input:focus-visible {
   margin-right: 12px;
 }
 .section-title .heading-title {
-  color: var(--rts-black);
+  color: var(--rts-heading);
   font-size: 56px;
   font-family: var(--font-primary);
   font-weight: var(--f-semi-bold);
@@ -14210,7 +14209,7 @@ textarea:focus-visible, input:focus-visible {
   }
 }
 .section-title .heading-title-two {
-  color: var(--rts-black);
+  color: var(--rts-heading);
   font-size: 48px;
   font-family: var(--font-primary);
   font-weight: var(--f-medium);
@@ -14240,7 +14239,7 @@ textarea:focus-visible, input:focus-visible {
   }
 }
 .section-title .heading-title-three {
-  color: var(--rts-black);
+  color: var(--rts-heading);
   font-size: 56px;
   font-family: var(--font-primary);
   font-weight: var(--f-semi-bold);
