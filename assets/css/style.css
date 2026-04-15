@@ -16680,7 +16680,7 @@ textarea:focus-visible, input:focus-visible {
   left: 30px;
   bottom: 30px;
   color: #fff;
-  font-size: 26px;
+  font-size: 24px;
   line-height: 32px;
 }
 @media (max-width: 1600px) {
@@ -17999,8 +17999,9 @@ textarea:focus-visible, input:focus-visible {
 }
 .testimonial__slide__item__wrapper .testimonial__slide__item .info .content .title {
   font-size: 17px;
+  line-height: 1;
   letter-spacing: -0.04em;
-  margin-bottom: -2px;
+  margin-bottom: 2px;
 }
 
 .testi__right {
