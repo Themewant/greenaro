@@ -13,6 +13,7 @@
 12. odoMeter
 13. smoothScroll
 14. videoActive
+15. gsapTextanim
 
 ==================================================*/
 (function ($) {
@@ -43,6 +44,8 @@
       rtsJs.smoothScroll();
       rtsJs.videoActive();
       rtsJs.gsapTextanim();
+      rtsJs.gsapTitleAnim();
+      rtsJs.revalImage();
     },
     // sticky Header
     headerSticky: function () {
@@ -502,7 +505,7 @@
     gsapTextanim: function () {
       $(document).ready(function () {
         let addAnimation = function () {
-          $(".skew-up").each(function (index) {
+          $(".rts-text-anime").each(function (index) {
             const text = new SplitType($(this), {
               types: "lines, words",
               lineClass: "word-line"
@@ -514,7 +517,7 @@
                 start: "top 85%",
                 end: "top 85%",
                 onComplete: function () {
-                  $(textInstance).removeClass("skew-up");
+                  $(textInstance).removeClass("rts-text-anime");
                 }
               }
             }); tl.set(textInstance, { opacity: 1 }).from(word, {
@@ -530,6 +533,88 @@
         });
       });
     },
+    gsapTitleAnim: function () {
+      $(document).ready(function () {
+        const animatedElements = document.querySelectorAll('.rts-text-anime');
+        if (!animatedElements.length) {
+          return;
+        }
+
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
+        }
+
+        animatedElements.forEach((element) => {
+          const hasTranslateX = element.hasAttribute('data-translateX');
+          const hasTranslateY = element.hasAttribute('data-translateY');
+
+          const staggerAmount = parseFloat(element.getAttribute('data-stagger')) || 0.05;
+          const translateXValue = hasTranslateX ? parseFloat(element.getAttribute('data-translateX')) : 20;
+          const translateYValue = hasTranslateY ? parseFloat(element.getAttribute('data-translateY')) : false;
+          const onScrollValue = parseInt(element.getAttribute('data-on-scroll') || '1', 10);
+          const delayValue = parseFloat(element.getAttribute('data-delay')) || 0.5;
+          const easeType = element.getAttribute('data-ease') || 'power2.out';
+
+          const splitText = new SplitType(element, { type: 'chars, words' });
+          const config = {
+            duration: hasTranslateX && hasTranslateY ? 3 : 1,
+            delay: delayValue,
+            autoAlpha: 0,
+            ease: easeType,
+            stagger: staggerAmount,
+          };
+
+          if (hasTranslateX) {
+            config.x = translateXValue;
+          }
+
+          if (hasTranslateY) {
+            config.y = translateYValue;
+          }
+
+          if (!hasTranslateX && !hasTranslateY) {
+            config.x = 50;
+          }
+
+          if (onScrollValue === 1) {
+            config.scrollTrigger = {
+              trigger: element,
+              start: 'top 85%',
+            };
+          }
+
+          gsap.from(splitText.chars, config);
+        });
+      });
+    },
+    revalImage: function () {
+      if ($('.reveal').length) {
+        gsap.registerPlugin(ScrollTrigger);
+        let revealContainers = document.querySelectorAll(".reveal");
+        revealContainers.forEach((container) => {
+          let image = container.querySelector("img");
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: container,
+              toggleActions: "play none none none"
+            }
+          });
+          tl.set(container, {
+            autoAlpha: 1
+          });
+          tl.from(container, 1, {
+            xPercent: -100,
+            ease: Power2.out
+          });
+          tl.from(image, 1, {
+            xPercent: 100,
+            scale: 1,
+            delay: -1,
+            ease: Power2.out
+          });
+        });
+      }
+    }
   };
   rtsJs.m();
 
@@ -546,8 +631,8 @@
   });
 
   // BOOTSTRAP TOOLTIPS
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+    new bootstrap.Tooltip(tooltipTriggerEl);
   });
 })(jQuery, window);

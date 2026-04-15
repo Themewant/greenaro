@@ -110,6 +110,17 @@
                     color: var(--rts-white);
                }
           }
+
+          .rts-btn.btn-primary {
+               &::before {
+                    background: var(--rts-white);
+               }
+
+               &:hover {
+                    color: var(--rts-black);
+               }
+          }
+
      }
 
      .cta-right-list {

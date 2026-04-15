@@ -265,7 +265,7 @@
     justify-content: center;
     gap: 16px;
 
-    @include mq($sm){
+    @include mq($sm) {
         flex-wrap: wrap;
     }
 
@@ -323,4 +323,26 @@
             }
         }
     }
+}
+
+.reveal {
+    position: relative;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    visibility: hidden;
+    overflow: hidden;
+
+    img {
+        height: 100%;
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -webkit-transform-origin: left;
+        transform-origin: left;
+    }
+}
+
+.wow {
+  visibility: hidden;
 }
