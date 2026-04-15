@@ -43,24 +43,17 @@
       rtsJs.odoMeter();
       rtsJs.smoothScroll();
       rtsJs.videoActive();
-      rtsJs.gsapTextanim();
       rtsJs.gsapTitleAnim();
       rtsJs.revalImage();
     },
     // sticky Header
     headerSticky: function () {
-      let scrollTimeout;
       $(window).on('scroll', function () {
-        if (!scrollTimeout) {
-          scrollTimeout = setTimeout(function() {
-            var ScrollBarPostion = $(window).scrollTop();
-            if (ScrollBarPostion > 100) {
-              $('.header__function').addClass('is__sticky');
-            } else {
-              $('.header__function').removeClass('is__sticky');
-            }
-            scrollTimeout = null;
-          }, 50); // Throttle to 50ms
+        var ScrollBarPostion = $(window).scrollTop();
+        if (ScrollBarPostion > 100) {
+          $('.header__function').addClass('is__sticky');
+        } else {
+          $('.header__function').removeClass('is__sticky');
         }
       });
     },
@@ -402,7 +395,6 @@
           $('.rts__offcanvas, .rts__offcanvas__overlay').removeClass('active');
         });
 
-        console.log('Mobile menu initialized successfully');
       } catch (error) {
         console.error('Mobile menu initialization failed:', error);
       }
@@ -424,47 +416,35 @@
         window.odometerOptions = {
           format: '(ddd)',
         };
-
-        let scrollTimeout;
-        const odometerElements = $('.odometer').toArray();
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+        }
 
         function triggerOdometer(element) {
           const $element = $(element);
           if (!$element.hasClass('odometer-triggered')) {
             const countNumber = $element.attr('data-count');
             $element.html(countNumber);
-            $element.addClass('odometer-triggered');
+            $element.addClass('odometer-triggered'); // Add a class to prevent re-triggering
           }
-        }
-
-        function isInViewport(element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
         }
 
         function handleOdometer() {
-          odometerElements.forEach(function(element) {
-            if (isInViewport(element)) {
-              triggerOdometer(element);
+          $('.odometer').each(function () {
+            if (isInViewport(this)) {
+              triggerOdometer(this);
             }
           });
-        }
-
-        // Throttled scroll handler
-        function throttledScroll() {
-          if (!scrollTimeout) {
-            scrollTimeout = setTimeout(function() {
-              handleOdometer();
-              scrollTimeout = null;
-            }, 100); // Throttle to 100ms
-          }
         }
 
         // Check on page load
         handleOdometer();
 
-        // Use throttled scroll handler
-        $(window).on('scroll', throttledScroll);
+        // Check on scroll
+        $(window).on('scroll', function () {
+          handleOdometer();
+        });
       });
     },
     smoothScroll: function (e) {

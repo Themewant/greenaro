@@ -80,12 +80,6 @@ All CSS Structure Follow this Order
   --font-primary: "Instrument Sans", sans-serif;
   --font-archivo: "Archivo", sans-serif;
   --font-inter: "Inter", sans-serif;
-  --font-poppins: "Poppins", sans-serif;
-  --font-roboto: "Roboto", sans-serif;
-  --font-manrope: "Manrope", sans-serif;
-  --font-plus: "Plus Jakarta Sans", sans-serif;
-  --font-sunsive: "Sunsive";
-  --font-outfit: "Outfit", sans-serif;
   --f-regular: 400;
   --f-medium: 500;
   --f-semi-bold: 600;
@@ -13901,7 +13895,6 @@ textarea:focus-visible, input:focus-visible {
   font-size: 16px;
   font-family: var(--font-primary);
   font-weight: var(--f-semi-bold);
-  transition: var(--transition);
 }
 .rts-btn.btn-primary {
   background: var(--btn-color);
@@ -13914,7 +13907,7 @@ textarea:focus-visible, input:focus-visible {
   overflow: hidden;
   position: relative;
   z-index: 1;
-  transition: var(--transition);
+  transition: all 0.5s;
 }
 .rts-btn.btn-primary::before {
   content: "";
@@ -15180,7 +15173,7 @@ textarea:focus-visible, input:focus-visible {
   font-weight: 500;
 }
 .rts__about__area .about__img {
-  height: 586px;
+  position: relative;
 }
 .rts__about__area .about__img.style-2 {
   height: 560px;
@@ -15214,7 +15207,7 @@ textarea:focus-visible, input:focus-visible {
   }
 }
 .rts__about__area .about__img img {
-  border-radius: 10px;
+  border-radius: 30px;
   object-fit: cover;
 }
 .rts__about__area .about__content {
@@ -15622,6 +15615,12 @@ textarea:focus-visible, input:focus-visible {
   font-family: "Archivo", sans-serif;
   font-weight: var(--f-regular);
   text-transform: capitalize;
+}
+.rts-about-wrapper .about-bottom-wrapper .rts-btn.btn-primary::before {
+  background: var(--rts-white);
+}
+.rts-about-wrapper .about-bottom-wrapper .rts-btn.btn-primary:hover {
+  color: var(--rts-black);
 }
 
 .rts__about__wrapper__three .about-left-image {

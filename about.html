@@ -19,21 +19,33 @@
     <!-- title -->
     <title>GREENARO - Sustainable Power Solutions HTML Template</title>
 
-    <!-- all plugin css -->
-    <link rel="stylesheet preload" href="assets/css/plugins.min.css" as="style">
-    <!-- fontawesome css -->
-    <link rel="stylesheet preload" href="assets/css/plugins/fontawesome.css" as="style">
-    <!-- odometer css -->
-    <link rel="stylesheet preload" href="assets/css/plugins/odometer.css" as="style">
-    <!-- custom font css -->
-    <link rel="stylesheet preload" href="assets/fonts/custom-font.css" as="style">
-    <!-- animate css -->
+    <!-- Animate css -->
     <link rel="stylesheet preload" href="assets/css/plugins/animate.css" as="style">
-    <!-- main style custom css -->
+
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet preload" href="assets/css/plugins/bootstrap.min.css" as="style">
+
+    <!-- Fontawesome Css -->
+    <link rel="stylesheet preload" href="assets/css/plugins/fontawesome.css" as="style">
+
+    <!-- Jaralux Css -->
+    <link rel="stylesheet preload" href="assets/css/plugins/jaralux.min.css" as="style">
+
+    <!-- Magnific Popup Css -->
+    <link rel="stylesheet preload" href="assets/css/plugins/magnific-popup.css" as="style">
+
+    <!-- Odometer css -->
+    <link rel="stylesheet preload" href="assets/css/plugins/odometer.css" as="style">
+
+    <!-- Swiper css -->
+    <link rel="stylesheet preload" href="assets/css/plugins/swiper.min.css" as="style">
+
+    <!-- Main Style -->
     <link rel="stylesheet preload" href="assets/css/style.css" as="style">
+
 </head>
 
-<body class="overflow-x-visible">
+<body>
     <!-- rts preloader area start -->
     <div class="loader-wrapper">
         <div class="loader"></div>
@@ -149,12 +161,12 @@
     <!-- rts breadcrumb area end -->
 
     <!-- about area -->
-    <section class="rts__about__area section-padding">
+    <section class="rts__about__area rts-section-gap">
         <div class="container">
             <div class="row gy-5">
                 <div class="col-lg-6">
-                    <div class="about__img jarallax">
-                        <img class="jarallax-img" src="assets/images/about/4.webp" alt="about">
+                    <div class="about__img">
+                        <img src="assets/images/about/4.webp" alt="about">
                         <div class="about__circle">
                             <div class="rts__circle">
                                 <svg class="spinner" viewBox="0 0 100 100">
@@ -318,7 +330,7 @@
             <div class="rts-service-wrapper">
                 <div class="row g-30">
                     <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="single-service">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".2s">
                             <div class="icon">
                                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M30.008 22.8394C30.9387 22.8394 31.7849 23.1994 32.4224 23.7838C32.9437 22.7407 33.5449 21.1294 33.5449 19.2294C33.5449 14.9325 31.8762 6.32629 31.3649 3.79129C30.9724 1.96004 28.283 2.15192 28.1755 4.03629C28.0924 8.42254 27.1924 18.82 27.9437 23.5C28.528 23.0857 29.2393 22.8394 30.008 22.8394Z" fill="#004638" />
@@ -338,7 +350,7 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="single-service">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".4s">
                             <div class="icon">
                                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.3339 32.9464H11.3387C12.1383 32.9464 12.7879 32.2994 12.7905 31.4993C12.819 22.7903 18.8283 18.1497 21.3503 16.6789C22.0429 16.275 22.277 15.386 21.8729 14.6933C21.469 14.0005 20.5799 13.7667 19.8874 14.1706C16.939 15.8901 9.92012 21.3138 9.88673 31.4899C9.88411 32.2916 10.532 32.9437 11.3339 32.9464Z" fill="#004638" />
@@ -358,7 +370,7 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="single-service">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".6s">
                             <div class="icon">
                                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M36.5299 18.7328C37.011 19.2222 37.6787 19.5255 38.4168 19.5255C40.3159 19.5255 41.5697 17.5892 40.8843 15.8628C40.8687 15.8237 40.88 15.7806 40.9129 15.7544L47.0331 10.8695C47.0659 10.8433 47.1102 10.842 47.1445 10.8662C48.8746 12.0868 51.3189 10.8542 51.3189 8.6734C51.3189 7.19683 50.1301 6 48.6636 6C46.7647 6 45.5107 7.93608 46.1961 9.66269C46.2117 9.70184 46.2004 9.74495 46.1676 9.77109L40.0473 14.656C40.0145 14.6823 39.9703 14.6835 39.9359 14.6593C38.2056 13.4388 35.7616 14.6714 35.7616 16.8521C35.7616 17.0311 35.7792 17.2059 35.8125 17.3751C35.8206 17.4164 35.8017 17.4565 35.7648 17.4763L30.1671 20.4718C30.1302 20.4915 30.0865 20.4848 30.057 20.4549C29.5758 19.9655 28.9082 19.6622 28.17 19.6622C26.7034 19.6622 25.5147 20.8591 25.5147 22.3356C25.5147 23.8121 26.7035 25.009 28.17 25.009C29.8556 25.009 31.0993 23.454 30.7745 21.8127C30.7663 21.7714 30.7852 21.7312 30.8221 21.7114L36.4198 18.7159C36.4567 18.6962 36.5005 18.7029 36.5299 18.7328ZM34.7668 39.2718L37.7888 42.3144C37.8252 42.3509 37.8843 42.3509 37.9207 42.3144L38.1042 42.1297C38.6781 41.5519 39.6172 41.5519 40.191 42.1297L46.8963 48.8804C47.4701 49.4582 47.4701 50.4037 46.8963 50.9814L44.3285 53.5667C43.7546 54.1444 42.8156 54.1444 42.2417 53.5667L35.5366 46.8158C34.9627 46.238 34.9627 45.2926 35.5366 44.7148L35.7201 44.53C35.7563 44.4934 35.7563 44.4338 35.7201 44.3972L32.6978 41.3544C32.6636 41.3199 32.6096 41.3177 32.5723 41.3489C25.9633 46.8902 16.1276 46.5407 9.92711 40.298C3.35763 33.6838 3.35763 22.9601 9.92711 16.346C16.6216 9.60585 27.5139 9.75146 34.0347 16.6761C34.0555 16.6981 34.0637 16.7259 34.059 16.7559C34.0542 16.7859 34.0374 16.8097 34.0107 16.824L30.3882 18.7625C30.3531 18.7813 30.3122 18.7761 30.2825 18.7495C25.2848 14.2641 17.6172 14.4346 12.8228 19.2615C7.85263 24.2656 7.85263 32.3786 12.8228 37.3827C18.3103 42.9076 27.3698 42.2364 32.0145 35.9974C32.0327 35.9729 32.0587 35.9595 32.089 35.9595H36.6873C36.7209 35.9595 36.7495 35.9758 36.767 36.0046C36.7844 36.0333 36.7856 36.0666 36.7702 36.0965C36.2211 37.1661 35.5518 38.1895 34.7611 39.1454C34.7301 39.1827 34.7325 39.2374 34.7668 39.2718ZM21.8177 34.5545C21.4324 34.5545 21.12 34.24 21.12 33.8521C21.12 33.4642 21.4324 33.1497 21.8177 33.1497H25.2105C25.2619 33.1497 25.3037 33.1075 25.3037 33.0558V28.5822C25.3037 27.708 26.0119 26.9951 26.8801 26.9951H29.4597C30.328 26.9951 31.0362 27.7082 31.0362 28.5822V33.0558C31.0362 33.1076 31.0781 33.1497 31.1294 33.1497H35.4573C35.5087 33.1497 35.5505 33.1075 35.5505 33.0558V23.3819C35.5505 22.5077 36.2587 21.7947 37.127 21.7947H39.7066C40.5749 21.7947 41.283 22.5077 41.283 23.3819V33.0558C41.283 33.1076 41.3249 33.1497 41.3762 33.1497H45.7041C45.7555 33.1497 45.7973 33.1075 45.7973 33.0558V15.5274C45.7973 14.6532 46.5055 13.9403 47.3738 13.9403H49.9534C50.8216 13.9403 51.5297 14.6532 51.5297 15.5274V33.0558C51.5297 33.1076 51.5716 33.1497 51.6229 33.1497H54.3023C54.6876 33.1497 55 33.4642 55 33.8521C55 34.24 54.6876 34.5545 54.3023 34.5545H21.8177Z" fill="#004638" />
@@ -372,7 +384,7 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="single-service">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".8s">
                             <div class="icon">
                                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M34.7101 34.7456C32.6771 34.426 31.2481 32.5451 31.475 30.5516C31.5057 30.2814 31.5671 30.0156 31.658 29.7594C31.8926 29.0823 31.6511 28.2986 31.0702 27.8106C29.8415 26.75 28.4485 25.8963 26.9458 25.2826C26.6175 25.1438 26.2522 25.1185 25.9079 25.2108C25.5636 25.3031 25.26 25.5077 25.0451 25.7922C24.7601 26.1691 24.4023 26.4852 23.993 26.7216C23.5838 26.958 23.1313 27.1099 22.6623 27.1685C22.1933 27.227 21.7173 27.191 21.2625 27.0625C20.8076 26.934 20.3832 26.7156 20.0142 26.4203C19.7863 26.2373 19.5825 26.0262 19.4075 25.7922C19.1928 25.5083 18.8896 25.3041 18.5459 25.2118C18.2021 25.1195 17.8374 25.1444 17.5094 25.2826C16.1222 25.8473 14.8278 26.6172 13.6694 27.5665C13.0593 28.0623 12.8041 28.8743 13.0524 29.5738C13.745 31.4117 12.8101 33.5659 10.9094 34.3512C10.5707 34.4919 10.2137 34.5836 9.84912 34.6236C9.47753 34.6677 9.12853 34.8251 8.84951 35.0745C8.57049 35.3238 8.37499 35.653 8.28957 36.0173C7.94164 37.5621 7.91065 39.1613 8.19849 40.7183C8.27262 41.094 8.46436 41.4364 8.74596 41.6959C9.02756 41.9554 9.38442 42.1186 9.76491 42.1619C11.7988 42.3759 13.3111 44.1734 13.1813 46.1738C13.1552 46.5764 13.0604 46.9716 12.9012 47.3424C12.6005 48.0367 12.8333 48.8796 13.4546 49.3926C14.6757 50.436 16.0559 51.2772 17.5429 51.8844C17.7275 51.9555 17.9227 51.9956 18.1204 52.003C18.3882 52.0081 18.6529 51.9453 18.8899 51.8206C19.127 51.6959 19.3287 51.5133 19.4763 51.2898C19.7927 50.8143 20.2198 50.4228 20.721 50.1488C21.2221 49.8749 21.7823 49.7267 22.3533 49.7169C22.9244 49.7072 23.4893 49.8363 23.9995 50.093C24.5096 50.3498 24.9498 50.7266 25.2823 51.191C25.4968 51.4954 25.8111 51.7151 26.1707 51.812C26.5303 51.9088 26.9125 51.8767 27.2508 51.7212C28.6114 51.119 29.8769 50.3218 31.0075 49.3548C31.5996 48.8547 31.8384 48.0547 31.5875 47.369C30.8726 45.5414 31.7834 43.3786 33.6755 42.5743C33.9956 42.4379 34.3326 42.3451 34.6774 42.2985C35.0437 42.2452 35.3848 42.0809 35.6547 41.8277C35.9247 41.5745 36.1105 41.2446 36.1871 40.8825C36.3501 40.1227 36.4385 39.3489 36.4509 38.5719C36.45 37.7529 36.3636 36.9362 36.1932 36.1351C36.1155 35.7806 35.9322 35.4581 35.6674 35.21C35.4026 34.9619 35.0688 34.8 34.7101 34.7456ZM26.9673 38.5719C26.9675 39.5097 26.6895 40.4265 26.1686 41.2063C25.6477 41.9862 24.9073 42.594 24.0409 42.953C23.1746 43.312 22.2212 43.406 21.3014 43.2232C20.3816 43.0403 19.5367 42.5888 18.8735 41.9257C18.2103 41.2627 17.7587 40.4179 17.5757 39.4981C17.3927 38.5783 17.4865 37.6249 17.8453 36.7585C18.2042 35.8921 18.8119 35.1515 19.5916 34.6305C20.3714 34.1095 21.2881 33.8314 22.2259 33.8314C23.4812 33.8379 24.6833 34.3394 25.571 35.227C26.4588 36.1146 26.9605 37.3166 26.9673 38.5719Z" fill="#004638" />
@@ -480,23 +492,23 @@
                         <img src="assets/images/map/map.webp" alt="World map showing solar installation locations">
                         <ul class="round-shape">
                             <li class="one">
-                                <i class="fa-light fa-plus" data-bs-toggle="tooltip" data-bs-placement="right"
+                                <i class="fa-light fa-plus" data-bs-toggle="tooltip" data-bs-placement="top"
                                     data-bs-custom-class="map-tooltip" title="Russia"></i>
                             </li>
                             <li class="two">
-                                <i class="fa-light fa-plus" data-bs-toggle="tooltip" data-bs-placement="right"
+                                <i class="fa-light fa-plus" data-bs-toggle="tooltip" data-bs-placement="top"
                                     data-bs-custom-class="map-tooltip" title="USA"></i>
                             </li>
                             <li class="three">
-                                <i class="fa-light fa-plus" data-bs-toggle="tooltip" data-bs-placement="right"
+                                <i class="fa-light fa-plus" data-bs-toggle="tooltip" data-bs-placement="top"
                                     data-bs-custom-class="map-tooltip" title="Brazil"></i>
                             </li>
                             <li class="four">
-                                <i class="fa-light fa-plus" data-bs-toggle="tooltip" data-bs-placement="right"
+                                <i class="fa-light fa-plus" data-bs-toggle="tooltip" data-bs-placement="top"
                                     data-bs-custom-class="map-tooltip" title="Africa"></i>
                             </li>
                             <li class="five">
-                                <i class="fa-light fa-plus" data-bs-toggle="tooltip" data-bs-placement="right"
+                                <i class="fa-light fa-plus" data-bs-toggle="tooltip" data-bs-placement="top"
                                     data-bs-custom-class="map-tooltip" title="Australia"></i>
                             </li>
                         </ul>
@@ -830,12 +842,12 @@
                             <div class="single__item">
                                 <span class="head">Photo Gallery</span>
                                 <div class="gallery__item">
-                                    <div class="thumb "><img src="assets/images/footer/1.svg" alt="gallery"></div>
-                                    <div class="thumb "><img src="assets/images/footer/2.svg" alt="gallery"></div>
-                                    <div class="thumb "><img src="assets/images/footer/3.svg" alt="gallery"></div>
-                                    <div class="thumb "><img src="assets/images/footer/4.svg" alt="gallery"></div>
-                                    <div class="thumb "><img src="assets/images/footer/5.svg" alt="gallery"></div>
-                                    <div class="thumb "><img src="assets/images/footer/6.svg" alt="gallery"></div>
+                                    <div class="thumb "><img src="assets/images/footer/1.webp" alt="gallery"></div>
+                                    <div class="thumb "><img src="assets/images/footer/2.webp" alt="gallery"></div>
+                                    <div class="thumb "><img src="assets/images/footer/3.webp" alt="gallery"></div>
+                                    <div class="thumb "><img src="assets/images/footer/4.webp" alt="gallery"></div>
+                                    <div class="thumb "><img src="assets/images/footer/5.webp" alt="gallery"></div>
+                                    <div class="thumb "><img src="assets/images/footer/6.webp" alt="gallery"></div>
                                 </div>
                             </div>
                         </div>
@@ -895,20 +907,21 @@
     </button>
     <!-- back to top end -->
 
-
-    <!-- plugin js -->
-    <script src="assets/js/plugins.min.js"></script>
-    <!-- odometer js -->
-    <script src="assets/js/plugins/odometer.js"></script>
-    <!-- smooth scroll -->
-    <script src="assets/js/plugins/smooth-scroll.js"></script>
-    <!-- gsap -->
-    <script src="assets/js/plugins/gsap.min.js"></script>
-    <script src="assets/js/plugins/split-text.js"></script>
-    <script src="assets/js/plugins/scrolltigger.js"></script>
-    <script src="assets/js/plugins/split-type.js"></script>
-    <!-- custom js -->
-    <script src="assets/js/main.js"></script>
+    <!-- script js -->
+    <script defer src="assets/js/plugins/jquery.min.js"></script>
+    <script defer src="assets/js/plugins/popper.js"></script>
+    <script defer src="assets/js/plugins/bootstrap.min.js"></script>
+    <script defer src="assets/js/plugins/gsap.min.js"></script>
+    <script defer src="assets/js/plugins/scrolltigger.js"></script>
+    <script defer src="assets/js/plugins/split-text.js"></script>
+    <script defer src="assets/js/plugins/split-type.js"></script>
+    <script defer src="assets/js/plugins/swiperjs.js"></script>
+    <script defer src="assets/js/plugins/magnific-popup.js"></script>
+    <script defer src="assets/js/plugins/jaralux.min.js"></script>
+    <script defer src="assets/js/plugins/odometer.js"></script>
+    <script defer src="assets/js/plugins/smooth-scroll.js"></script>
+    <script defer src="assets/js/plugins/wow.js"></script>
+    <script defer src="assets/js/main.js"></script>
 </body>
 
 </html>

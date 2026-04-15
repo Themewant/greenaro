@@ -14,7 +14,7 @@
   }
 
   .about__img {
-    height: 586px;
+    position: relative;
 
     &.style-2 {
       height: 560px;
@@ -50,7 +50,7 @@
     }
 
     img {
-      border-radius: 10px;
+      border-radius: 30px;
       object-fit: cover;
     }
   }
@@ -518,6 +518,16 @@
           font-weight: var(--f-regular);
           text-transform: capitalize;
         }
+      }
+    }
+
+    .rts-btn.btn-primary {
+      &::before {
+        background: var(--rts-white);
+      }
+
+      &:hover {
+        color: var(--rts-black);
       }
     }
   }
