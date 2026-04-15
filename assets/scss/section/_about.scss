@@ -4,13 +4,6 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 50px;
-
-    .about__text {
-      .designation {
-        font-family: var(--font-onest);
-        font-weight: 500;
-      }
-    }
   }
 
   .about__img {
@@ -431,6 +424,7 @@
     .desc {
       color: rgba(255, 255, 255, 0.5);
       font-size: 40px;
+      font-family: var(--font-primary);
       font-weight: var(--f-regular);
       line-height: 1.5;
       max-width: 1090px;
@@ -506,7 +500,7 @@
 
         .count-title {
           font-size: 48px;
-          font-family: 'Manrope', sans-serif;
+          font-family: var(--font-primary);
           font-weight: var(--f-bold);
           margin-bottom: 0;
         }
@@ -514,7 +508,6 @@
         .desc {
           color: var(--heading-color);
           font-size: 15px;
-          font-family: 'Archivo', sans-serif;
           font-weight: var(--f-regular);
           text-transform: capitalize;
         }

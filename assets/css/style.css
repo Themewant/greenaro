@@ -15143,10 +15143,6 @@ textarea:focus-visible, input:focus-visible {
   gap: 10px;
   margin-bottom: 50px;
 }
-.rts__about__area .about__info .about__text .designation {
-  font-family: var(--font-onest);
-  font-weight: 500;
-}
 .rts__about__area .about__img {
   position: relative;
 }
@@ -15507,6 +15503,7 @@ textarea:focus-visible, input:focus-visible {
 .rts-about-wrapper .section-title-area .desc {
   color: rgba(255, 255, 255, 0.5);
   font-size: 40px;
+  font-family: var(--font-primary);
   font-weight: var(--f-regular);
   line-height: 1.5;
   max-width: 1090px;
@@ -15580,14 +15577,13 @@ textarea:focus-visible, input:focus-visible {
 }
 .rts-about-wrapper .about-bottom-wrapper .about-counter .counter-item .count-title {
   font-size: 48px;
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-primary);
   font-weight: var(--f-bold);
   margin-bottom: 0;
 }
 .rts-about-wrapper .about-bottom-wrapper .about-counter .counter-item .desc {
   color: var(--heading-color);
   font-size: 15px;
-  font-family: "Archivo", sans-serif;
   font-weight: var(--f-regular);
   text-transform: capitalize;
 }
@@ -17998,7 +17994,7 @@ textarea:focus-visible, input:focus-visible {
   color: var(--rts-white);
 }
 .testimonial__slide__item__wrapper .testimonial__slide__item .desc {
-  color: var(--rts-heading);
+  color: var(--rts-black);
   font-weight: var(--f-medium);
   line-height: 1.6;
 }
@@ -18483,6 +18479,7 @@ textarea:focus-visible, input:focus-visible {
   align-items: center;
   gap: 10px;
   color: #011E19;
+  font-weight: var(--f-medium);
 }
 .project-left-content .project-feature-list li:not(:last-child) {
   margin-bottom: 20px;
