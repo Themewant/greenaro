@@ -42,7 +42,7 @@
             }
 
             @include mq($xs) {
-                width: 100px;
+                display: none;
             }
         }
 
@@ -58,7 +58,7 @@
             backdrop-filter: blur(1px);
 
             @include mq($xs) {
-                width: 100px;
+                display: none;
             }
         }
     }
