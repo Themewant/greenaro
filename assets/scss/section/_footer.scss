@@ -37,7 +37,6 @@
                     border-bottom: 1px solid rgba(126, 234, 87, 0.1);
                     padding: 10px 0;
                     font-size: 16px;
-                    font-family: var(--font-roboto);
                     font-weight: 500;
                     line-height: 24px;
                     color: var(--rts-white);
@@ -480,7 +479,6 @@
                .desc {
                     color: rgba(253, 255, 231, 0.7);
                     font-size: 16px;
-                    font-family: var(--font-archivo);
                     font-weight: var(--f-regular);
                     line-height: 1.4;
                     margin-bottom: 30px;
@@ -558,7 +556,7 @@
                               a {
                                    color: rgba(253, 255, 231, 0.8);
                                    font-size: 16px;
-                                   font-family: var(--font-archivo);
+                                   
                                    font-weight: var(--f-medium);
                                    transition: var(--transition);
 

@@ -121,10 +121,6 @@
                margin: 0 auto;
           }
      }
-
-     // &.inner-bg{
-     //      background: #F9FAFB;
-     // }
 }
 
 .rts-service-wrapper-two {
@@ -141,9 +137,11 @@
           position: relative;
           z-index: 1;
           border-color: rgba(13, 13, 13, 0.2);
+          transition: var(--transition);
 
           @include mq($sm) {
                padding: 30px;
+               border-color: transparent;
           }
 
           &::before {
@@ -153,11 +151,10 @@
                background: #004638;
                opacity: 0;
                z-index: -1;
-               transition: var(--transition);
                border-radius: 0;
+               transition: opacity 0.4s ease;
           }
 
-          // 1st item
           &:nth-child(1) {
                border-width: 0 1px 1px 0;
                border-style: solid;
@@ -168,7 +165,6 @@
                }
           }
 
-          // 2nd item
           &:nth-child(2) {
                border-width: 0 0 1px 0;
                border-style: solid;
@@ -178,7 +174,6 @@
                }
           }
 
-          // 3rd item
           &:nth-child(3) {
                border-width: 0 1px 0 0;
                border-style: solid;
@@ -188,13 +183,48 @@
                }
           }
 
-          // 4th item
           &:nth-child(4) {
                border-width: 0;
                border-style: solid;
 
                &::before {
                     border-radius: 0 30px 30px 30px;
+               }
+          }
+
+          &:nth-child(5) {
+               border-width: 1px 1px 1px 0;
+               border-style: solid;
+
+               &::before {
+                    border-radius: 30px 0 30px 30px;
+               }
+          }
+
+          &:nth-child(6) {
+               border-width: 1px 0 1px 0;
+               border-style: solid;
+
+               &::before {
+                    border-radius: 0 30px 30px 30px;
+               }
+          }
+
+          &:nth-child(7) {
+               border-width: 0 1px 0 0;
+               border-style: solid;
+
+               &::before {
+                    border-radius: 30px 0 30px 30px;
+               }
+          }
+
+          &:nth-child(8) {
+               border-width: 0;
+               border-style: solid;
+
+               &::before {
+                    border-radius:  0 30px 30px 30px;
                }
           }
 
@@ -209,6 +239,7 @@
                     svg {
                          path {
                               fill: #B4E33D;
+                              transition: var(--transition);
                          }
                     }
                }
@@ -216,16 +247,19 @@
                .content {
                     .title {
                          color: #F7F6F2;
+                         transition: var(--transition);
                     }
 
                     .desc {
                          color: rgba(247, 246, 242, 0.8);
+                         transition: var(--transition);
                     }
                }
           }
 
           .icon {
                margin-bottom: 50px;
+
           }
 
           .content {

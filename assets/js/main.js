@@ -500,37 +500,6 @@
       });
 
     },
-    gsapTextanim: function () {
-      $(document).ready(function () {
-        let addAnimation = function () {
-          $(".rts-text-anime").each(function (index) {
-            const text = new SplitType($(this), {
-              types: "lines, words",
-              lineClass: "word-line"
-            }); let textInstance = $(this);
-            let line = textInstance.find(".word-line");
-            let word = line.find(".word"); let tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: textInstance,
-                start: "top 85%",
-                end: "top 85%",
-                onComplete: function () {
-                  $(textInstance).removeClass("rts-text-anime");
-                }
-              }
-            }); tl.set(textInstance, { opacity: 1 }).from(word, {
-              y: "100%",
-              skewX: "-5",
-              duration: 2,
-              stagger: 0.03,
-              ease: "expo.out"
-            });
-          });
-        }; addAnimation(); window.addEventListener("resize", function (event) {
-          if ($(window).width() >= 992) { addAnimation(); }
-        });
-      });
-    },
     gsapTitleAnim: function () {
       $(document).ready(function () {
         const animatedElements = document.querySelectorAll('.rts-text-anime');

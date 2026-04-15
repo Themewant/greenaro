@@ -34,7 +34,7 @@
                     .link-btn {
                          display: inline-block;
                          font-size: 12px;
-                         font-family: var(--font-archivo);
+                         
                          font-weight: var(--f-medium);
                          line-height: 1;
                          padding: 5px 8px;
@@ -45,7 +45,7 @@
 
                     .read {
                          font-size: 12px;
-                         font-family: var(--font-archivo);
+                         
                          font-weight: var(--f-medium);
                          line-height: 1;
                          color: var(--rts-black);
@@ -55,7 +55,7 @@
                .title {
                     color: var(--rts-black);
                     font-size: 23px;
-                    font-family: var(--font-plus);
+                    font-family: var(--font-secondary);
                     font-weight: var(--f-semi-bold);
                     line-height: 1.2;
                     transition: var(--transition);
@@ -81,7 +81,7 @@
                .info {
                     .name {
                          font-size: 16px;
-                         font-family: var(--font-archivo);
+                         
                          font-weight: var(--f-medium);
                          line-height: 1;
                     }
