@@ -16627,6 +16627,7 @@ textarea:focus-visible, input:focus-visible {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
+  height: 100%;
 }
 @media (max-width: 991px) {
   .choose__items__wrapper .choose__items__main {
@@ -16661,6 +16662,12 @@ textarea:focus-visible, input:focus-visible {
   position: relative;
   overflow: hidden;
   border-radius: 30px;
+  height: 100%;
+}
+@media screen and (max-width: 575px) {
+  .choose__items__wrapper .choose__single__item .choose__img {
+    height: 350px;
+  }
 }
 .choose__items__wrapper .choose__single__item .choose__img img {
   width: 100%;
@@ -16700,11 +16707,6 @@ textarea:focus-visible, input:focus-visible {
 }
 .choose__items__wrapper {
   /* RIGHT SIDE IMAGE */
-}
-@media (max-width: 991px) {
-  .choose__items__wrapper .choose__img__item {
-    margin-top: 30px;
-  }
 }
 .choose__items__wrapper .choose__img__item .choose__img {
   position: relative;
