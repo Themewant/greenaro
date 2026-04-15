@@ -4,6 +4,7 @@
   font-size: 16px;
   font-family: var(--font-primary);
   font-weight: var(--f-semi-bold);
+  transition: var(--transition);
   
   &.btn-primary {
     background: var(--btn-color);
@@ -16,6 +17,7 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
+    transition: var(--transition);
 
     &::before {
       content: "";

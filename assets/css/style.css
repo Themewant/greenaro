@@ -10615,14 +10615,9 @@ p:last-child {
     max-width: 1290px;
   }
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .container {
     max-width: 100% !important;
-  }
-}
-@media (min-width: 576px) {
-  .container, .container-sm {
-    max-width: 100%;
   }
 }
 .g-30 {
@@ -13906,6 +13901,7 @@ textarea:focus-visible, input:focus-visible {
   font-size: 16px;
   font-family: var(--font-primary);
   font-weight: var(--f-semi-bold);
+  transition: var(--transition);
 }
 .rts-btn.btn-primary {
   background: var(--btn-color);
@@ -13918,6 +13914,7 @@ textarea:focus-visible, input:focus-visible {
   overflow: hidden;
   position: relative;
   z-index: 1;
+  transition: var(--transition);
 }
 .rts-btn.btn-primary::before {
   content: "";
@@ -16720,6 +16717,16 @@ textarea:focus-visible, input:focus-visible {
   font-size: 26px;
   line-height: 32px;
 }
+@media (max-width: 1600px) {
+  .choose__items__wrapper .choose__single__item .choose__img .title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1400px) {
+  .choose__items__wrapper .choose__single__item .choose__img .title br {
+    display: none;
+  }
+}
 .choose__items__wrapper .choose__single__item:hover img {
   transform: scale(1.05);
 }
@@ -16745,6 +16752,9 @@ textarea:focus-visible, input:focus-visible {
 .choose__items__wrapper {
   /* RIGHT SIDE IMAGE */
 }
+.choose__items__wrapper .choose__img__item {
+  height: 100%;
+}
 .choose__items__wrapper .choose__img__item .choose__img {
   position: relative;
   height: 100%;
@@ -16768,6 +16778,18 @@ textarea:focus-visible, input:focus-visible {
   left: 50%;
   transform: translateX(-50%);
   color: #fff;
+  font-size: 40px;
+  letter-spacing: -0.04em;
+}
+@media screen and (max-width: 991px) {
+  .choose__items__wrapper .choose__img__item .choose__img .img__content .title {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .choose__items__wrapper .choose__img__item .choose__img .img__content .title {
+    font-size: 25px;
+  }
 }
 .choose__items__wrapper .choose__img__item .choose__img .img__content .bottom {
   position: absolute;

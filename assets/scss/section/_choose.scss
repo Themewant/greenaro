@@ -157,6 +157,17 @@
                     color: #fff;
                     font-size: 26px;
                     line-height: 32px;
+
+                    @media(max-width:1600px) {
+                         font-size: 20px;
+                    }
+
+                    @media(max-width:1400px) {
+
+                         br {
+                              display: none;
+                         }
+                    }
                }
           }
 
@@ -183,6 +194,7 @@
 
      /* RIGHT SIDE IMAGE */
      .choose__img__item {
+          height: 100%;
 
           .choose__img {
                position: relative;
@@ -201,7 +213,7 @@
                     position: absolute;
                     inset: 0;
                     text-align: center;
-                    
+
 
                     .title {
                          position: absolute;
@@ -209,6 +221,16 @@
                          left: 50%;
                          transform: translateX(-50%);
                          color: #fff;
+                         font-size: 40px;
+                         letter-spacing: -0.04em;
+
+                         @include mq($md){
+                              font-size: 30px;
+                         }
+
+                         @include mq($xs){
+                              font-size: 25px;
+                         }
                     }
 
                     .bottom {
@@ -242,7 +264,7 @@
                               padding: 10px 20px;
                               display: inline-block;
                               background: transparent;
-                              
+
                               i {
                                    margin-left: 5px;
                               }

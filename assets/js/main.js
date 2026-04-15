@@ -49,12 +49,18 @@
     },
     // sticky Header
     headerSticky: function () {
+      let scrollTimeout;
       $(window).on('scroll', function () {
-        var ScrollBarPostion = $(window).scrollTop();
-        if (ScrollBarPostion > 100) {
-          $('.header__function').addClass('is__sticky');
-        } else {
-          $('.header__function').removeClass('is__sticky');
+        if (!scrollTimeout) {
+          scrollTimeout = setTimeout(function() {
+            var ScrollBarPostion = $(window).scrollTop();
+            if (ScrollBarPostion > 100) {
+              $('.header__function').addClass('is__sticky');
+            } else {
+              $('.header__function').removeClass('is__sticky');
+            }
+            scrollTimeout = null;
+          }, 50); // Throttle to 50ms
         }
       });
     },
@@ -418,35 +424,47 @@
         window.odometerOptions = {
           format: '(ddd)',
         };
-        function isInViewport(element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
-        }
+
+        let scrollTimeout;
+        const odometerElements = $('.odometer').toArray();
 
         function triggerOdometer(element) {
           const $element = $(element);
           if (!$element.hasClass('odometer-triggered')) {
             const countNumber = $element.attr('data-count');
             $element.html(countNumber);
-            $element.addClass('odometer-triggered'); // Add a class to prevent re-triggering
+            $element.addClass('odometer-triggered');
           }
         }
 
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
+        }
+
         function handleOdometer() {
-          $('.odometer').each(function () {
-            if (isInViewport(this)) {
-              triggerOdometer(this);
+          odometerElements.forEach(function(element) {
+            if (isInViewport(element)) {
+              triggerOdometer(element);
             }
           });
+        }
+
+        // Throttled scroll handler
+        function throttledScroll() {
+          if (!scrollTimeout) {
+            scrollTimeout = setTimeout(function() {
+              handleOdometer();
+              scrollTimeout = null;
+            }, 100); // Throttle to 100ms
+          }
         }
 
         // Check on page load
         handleOdometer();
 
-        // Check on scroll
-        $(window).on('scroll', function () {
-          handleOdometer();
-        });
+        // Use throttled scroll handler
+        $(window).on('scroll', throttledScroll);
       });
     },
     smoothScroll: function (e) {

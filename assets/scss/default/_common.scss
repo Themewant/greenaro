@@ -227,15 +227,9 @@
     }
 }
 
-@media (min-width:768px) {
+@media (max-width:768px) {
     .container {
         max-width: 100% !important;
-    }
-}
-
-@media (min-width: 576px) {
-    .container, .container-sm {
-        max-width: 100%;
     }
 }
 
