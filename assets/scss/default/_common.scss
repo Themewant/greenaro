@@ -1,27 +1,3 @@
-.section-padding {
-    padding: 120px 0;
-
-    @include mq($lg) {
-        padding: 100px 0;
-    }
-}
-
-.pt-110 {
-    @include mq($lg) {
-        padding-top: 90px;
-    }
-}
-
-.pb-110 {
-    @include mq($lg) {
-        padding-bottom: 90px;
-    }
-}
-
-.pt-90 {
-    padding-top: 90px;
-}
-
 .bg-green {
     background: var(--heading-color);
 }
@@ -32,6 +8,10 @@
 
 .bg-light-lime {
     background: var(--heading-color-3);
+}
+
+.bg-light {
+    background: #F9FAFB !important;
 }
 
 .rts-dot-pagination {
@@ -260,9 +240,6 @@
     }
 }
 
-.bg-light {
-    background: #F9FAFB;
-}
 
 .rts-page-nav {
     margin-top: 60px;

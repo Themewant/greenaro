@@ -6322,31 +6322,6 @@ p:last-child {
   animation-name: slideOutUp;
 }
 
-.section-padding {
-  padding: 120px 0;
-}
-@media screen and (max-width: 1199px) {
-  .section-padding {
-    padding: 100px 0;
-  }
-}
-
-@media screen and (max-width: 1199px) {
-  .pt-110 {
-    padding-top: 90px;
-  }
-}
-
-@media screen and (max-width: 1199px) {
-  .pb-110 {
-    padding-bottom: 90px;
-  }
-}
-
-.pt-90 {
-  padding-top: 90px;
-}
-
 .bg-green {
   background: var(--heading-color);
 }
@@ -6357,6 +6332,10 @@ p:last-child {
 
 .bg-light-lime {
   background: var(--heading-color-3);
+}
+
+.bg-light {
+  background: #F9FAFB !important;
 }
 
 .rts-dot-pagination .swiper-pagination-bullet {
@@ -6560,10 +6539,6 @@ p:last-child {
   .or-1 {
     order: -1 !important;
   }
-}
-
-.bg-light {
-  background: #F9FAFB;
 }
 
 .rts-page-nav {
