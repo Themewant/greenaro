@@ -278,8 +278,16 @@
       justify-content: space-between;
       flex-wrap: wrap;
 
+      @include mq($xs) {
+        margin-bottom: 25px;
+      }
+
       .team__info {
         margin-bottom: 40px;
+
+        @include mq($xs) {
+          margin-bottom: 25px;
+        }
 
         .email {
           margin-bottom: 5px;

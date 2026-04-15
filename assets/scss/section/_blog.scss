@@ -136,6 +136,11 @@
                     align-items: center;
                     gap: 16px;
 
+                    @include mq($xs) {
+                         flex-wrap: wrap;
+                         gap: 10px;
+                    }
+
                     li {
                          a {
                               color: var(--rts-black);
@@ -145,6 +150,10 @@
                               background: #E8F4E4;
                               padding: 6px 12px;
                               border-radius: 4px;
+
+                              @include mq($xs) {
+                                   font-size: 14px;
+                              }
                          }
                     }
                }
@@ -156,6 +165,10 @@
                font-weight: var(--f-semi-bold);
                line-height: 1.2;
                margin-bottom: 20px;
+
+               @include mq($xs) {
+                    font-size: 24px;
+               }
           }
 
           .blog__details__list {
