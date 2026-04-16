@@ -16443,6 +16443,7 @@ textarea:focus-visible, input:focus-visible {
   color: var(--rts-heading);
 }
 .blog__items__wrapper .single-blog-item .content .info .name {
+  color: var(--heading-color);
   font-size: 16px;
   font-weight: var(--f-medium);
   line-height: 1;
