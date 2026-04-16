@@ -1,4 +1,5 @@
 .rts__footer__area {
+
      .footer__top {
           padding: 100px 0 50px;
           @include rt-between;
@@ -81,6 +82,8 @@
                          }
                     }
                }
+
+
           }
 
           &__logo {
@@ -110,6 +113,11 @@
                }
 
                .single__item {
+                    .head {
+                         color: var(--rts-neon);
+                         display: inline-block;
+                         margin-bottom: 22px;
+                    }
 
                     p,
                     a {
@@ -168,26 +176,6 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-
-          &.style-2 {
-               border-color: #15403F;
-          }
-
-          &.style-3 {
-               border-color: transparent;
-
-               @include mq($xs) {
-                    margin-top: 40px;
-               }
-
-               .copyright {
-                    p {
-                         span {
-                              color: var(--heading-color-4);
-                         }
-                    }
-               }
-          }
 
           @include mq($xs) {
                flex-wrap: wrap;
