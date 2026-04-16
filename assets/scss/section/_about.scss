@@ -568,6 +568,10 @@
       row-gap: 20px;
       column-gap: 28px;
 
+      @include mq($xs){
+        gap: 15px;
+      }
+
       li {
         display: flex;
         align-items: center;
@@ -581,7 +585,8 @@
         line-height: 1.1;
 
         @include mq($lg) {
-          font-size: 15px;
+          font-size: 14px;
+          padding: 15px;
         }
       }
     }

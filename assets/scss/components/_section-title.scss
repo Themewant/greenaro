@@ -104,12 +104,10 @@
           }
 
           @include mq($lg) {
-               font-size: 40px;
+               font-size: 35px;
           }
 
           @include mq($md) {
-               font-size: 35px;
-
                br {
                     display: none;
                }
