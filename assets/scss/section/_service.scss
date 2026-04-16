@@ -820,6 +820,7 @@
                     padding-bottom: 5px;
 
                     h3 {
+                         color: var(--heading-color);
                          font-size: 24px;
                          font-weight: var(--f-semi-bold);
                          line-height: 1;
@@ -847,7 +848,10 @@
                               gap: 10px;
                               padding: 20px;
                               background: #E8F4E4;
-                              color: var(--rts-heading);
+                              color: var(--heading-color);
+                              font-size: 18px;
+                              font-family: var(--font-primary);
+                              font-weight: var(--f-medium);
                               border-radius: 10px;
                               position: relative;
                               transition: var(--transition);
@@ -857,7 +861,7 @@
                                    content: '\f061';
                                    font-family: "Font Awesome 6 Pro";
                                    right: 20px;
-                                   color: var(--rts-heading);
+                                   color: var(--heading-color);
                                    transition: var(--transition);
                               }
 
@@ -968,10 +972,11 @@
 
           .single__item {
                .title {
-                    color: var(--rts-black);
+                    color: var(--rts-heading);
                     font-size: 32px;
                     font-weight: var(--f-semi-bold);
                     line-height: 1.2;
+                    margin-bottom: 24px;
 
                     @include mq($xs) {
                          font-size: 24px;
@@ -979,7 +984,10 @@
                }
 
                .tt {
+                    color: #666666;
                     text-transform: capitalize;
+                    line-height: 1.5;
+                    margin-bottom: 30px;
                }
 
                .list {
@@ -989,8 +997,9 @@
 
                     li {
                          width: 50%;
-                         color: var(--rts-heading);
+                         color: var(--heading-color);
                          font-size: 18px;
+                         font-family: var(--font-primary);
                          font-weight: var(--f-semi-bold);
 
 

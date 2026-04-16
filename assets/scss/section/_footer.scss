@@ -420,6 +420,7 @@
                color: #B4E33D;
                font-weight: var(--f-semi-bold);
                margin-bottom: 10px;
+               text-transform: uppercase;
           }
 
           .title {
@@ -532,7 +533,7 @@
 
                .single-widget {
                     .widget-title {
-                         color: var(--rts-white);
+                         color: #FDFFE7;
                          font-size: 20px;
                          font-family: var(--font-inter);
                          font-weight: var(--f-medium);
@@ -554,10 +555,9 @@
                               }
 
                               a {
-                                   color: rgba(253, 255, 231, 0.8);
+                                   color: #CCD3D3;
                                    font-size: 16px;
-                                   
-                                   font-weight: var(--f-medium);
+                                   font-weight: var(--f-regular);
                                    transition: var(--transition);
 
                                    &:hover {

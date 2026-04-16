@@ -170,7 +170,8 @@
 .container-1520,
 .container-1534,
 .container-1428,
-.container-1290 {
+.container-1290,
+.container-1487 {
     width: 100%;
     padding: 0 15px;
     margin: 0 auto
@@ -180,6 +181,12 @@
     .container {
         max-width: 1720px;
         margin: 0 auto;
+    }
+}
+
+@media(min-width: 1400px) {
+    .container-1487 {
+        max-width: 1487px
     }
 }
 

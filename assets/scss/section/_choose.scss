@@ -39,7 +39,7 @@
                     }
 
                     &:nth-child(3) {
-                         background: #E8EFB4;
+                         background: #D2E9C4;
                     }
 
                     &:not(:last-child) {
@@ -53,12 +53,14 @@
                     .content {
                          .title {
                               font-size: 30px;
+                              font-family: var(--font-inter);
                               font-weight: var(--f-medium);
                               line-height: 1;
+                              letter-spacing: -0.02em;
                          }
 
                          .desc {
-                              color: var(--rts-para);
+                              color: #6B7280;
                          }
                     }
 
@@ -338,9 +340,10 @@
 
           .desc {
                max-width: 535px;
-               color: var(--rts-white);
+               color: #CCD3D3;
+               font-family: var(--font-primary);
                font-weight: var(--f-regular);
-               line-height: 1.4;
+               line-height: 1.6;
           }
      }
 
@@ -398,6 +401,7 @@
 
                     .desc {
                          color: rgba(255, 255, 255, 0.7);
+                         font-family: var(--font-primary);
                          font-weight: var(--f-regular);
                          line-height: 1.6;
                     }

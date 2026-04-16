@@ -128,6 +128,12 @@
   .rts__team__item__wrappers {
     position: relative;
 
+    .team__item__slide {
+      .swiper-slide {
+        transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+    }
+
     .team-nav-area {
       display: flex;
       align-items: center;
@@ -184,7 +190,7 @@
         text-align: center;
 
         .title {
-          color: var(--rts-black);
+          color: var(--rts-heading);
           font-size: 24px;
           font-weight: var(--f-medium);
           line-height: 1;
@@ -209,7 +215,7 @@
         }
 
         .designation {
-          color: rgba(18, 18, 18, 0.75);
+          color: #6B7280;
 
           @media (min-width:992px) and (max-width: 1400px) {
             font-size: 14px;

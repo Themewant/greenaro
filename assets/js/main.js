@@ -188,18 +188,14 @@
           slidesPerView: 4,
           spaceBetween: 30,
           loop: true,
-          speed: 1000,
+          speed: 2500,
           autoplay: {
-            delay: 3000,
+            delay: 1500,
             disableOnInteraction: false,
           },
           navigation: {
             nextEl: '.rts-btn-next',
             prevEl: '.rts-btn-prev',
-          },
-          pagination: {
-            el: '.rts-dot-pagination',
-            clickable: true,
           },
           breakpoints: {
             1400: {
@@ -600,6 +596,6 @@
   // BOOTSTRAP TOOLTIPS
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-    new bootstrap.Tooltip(tooltipTriggerEl, { html: true });
+    new bootstrap.Tooltip(tooltipTriggerEl);
   });
 })(jQuery, window);

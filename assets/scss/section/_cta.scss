@@ -186,11 +186,11 @@
                }
 
                .error-desc {
-                    color: var(--rts-black);
+                    color: var(--rts-heading);
                     font-size: 24px;
                     font-weight: var(--f-semi-bold);
                     line-height: 1.2;
-                    margin-bottom: 5px;
+                    margin-bottom: 12px;
 
                     @include mq($xs) {
                          font-size: 20px;
@@ -198,6 +198,8 @@
                }
 
                .desc {
+                    font-family: var(--font-primary);
+                    font-weight: var(--f-medium);
                     margin-bottom: 60px;
                }
 

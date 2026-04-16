@@ -548,7 +548,7 @@
                     }
 
                     .title {
-                         color: var(--rts-black);
+                         color: var(--rts-heading);
                          font-size: 32px;
                          font-weight: var(--f-semi-bold);
                          line-height: 1.2;
@@ -566,12 +566,14 @@
                          padding: 0;
 
                          &.style-2 {
+                              margin-top: 50px;
                               padding: 20px;
                               background: #E8F4E4;
+                              border-radius: 16px;
                          }
 
                          li {
-                              color: var(--rts-heading);
+                              color: var(--heading-color);
                               border-radius: 100px;
                               position: relative;
                               margin-left: 16px;
@@ -611,6 +613,9 @@
                margin-left: 50px;
                position: sticky;
                top: 120px;
+               padding: 24px;
+               background: var(--rts-white);
+               border-radius: 20px;
 
                @include mq($lg) {
                     margin-left: 20px;

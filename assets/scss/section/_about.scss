@@ -551,9 +551,11 @@
       }
 
       .desc {
-        color: var(--rts-black);
+        color: #6B7280;
+        font-family: var(--font-primary);
         font-weight: var(--f-regular);
         line-height: 1.8;
+        max-width: 650px;
       }
     }
 
