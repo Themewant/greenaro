@@ -596,7 +596,6 @@
 
 
                img {
-                    // border-radius: 6px;
                     transform: scale(1.1);
                     transform: scale(1.1);
                     transition: transform 0.5s ease;
@@ -1097,7 +1096,20 @@
           border: 1px solid rgba(0, 0, 0, 0.1);
           border-radius: 20px;
           height: 100%;
-          transition: var(--transition);
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+
+          &::before {
+               position: absolute;
+               content: '';
+               inset: 0;
+               background: #004638;
+               z-index: -1;
+               transform: scaleY(0);
+               transform-origin: bottom;
+               transition: all 0.4s;
+          }
 
           .icon {
                margin-bottom: 40px;
@@ -1126,7 +1138,10 @@
           }
 
           &:hover {
-               background: #004638;
+
+               &::before {
+                    transform: scaleY(1);
+               }
 
                .icon {
                     svg {
