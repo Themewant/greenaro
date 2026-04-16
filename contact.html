@@ -227,7 +227,7 @@
                                 <span class="sub-title">Contact</span>
                                 <h2 class="heading-title rts-text-anime">Let's Connect & Start Something Great</h2>
                             </div>
-                            <form action="mailer.php" method="post" id="contact-form" class="contact__form-wrapper">
+                            <form action="#" class="contact__form-wrapper">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form__input">
@@ -239,6 +239,7 @@
                                         <div class="form__input">
                                             <label for="lname">Last Name *</label>
                                             <input type="text" name="lname" id="lname" placeholder="Last Name">
+                                            <input type="hidden" name="name" id="name">
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -266,7 +267,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <div id="form-messages mt-10"></div>
+                            <div id="form-messages" class="mt-10"></div>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -540,7 +541,6 @@
     <script defer src="assets/js/plugins/odometer.js"></script>
     <script defer src="assets/js/plugins/smooth-scroll.js"></script>
     <script defer src="assets/js/plugins/wow.js"></script>
-    <script defer src="assets/js/plugins/contact-form.js"></script>
     <script defer src="assets/js/main.js"></script>
 </body>
 
