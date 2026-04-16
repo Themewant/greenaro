@@ -17102,7 +17102,7 @@ textarea:focus-visible, input:focus-visible {
   position: relative;
   z-index: 1;
   border-color: rgba(13, 13, 13, 0.2);
-  transition: var(--transition);
+  overflow: hidden;
 }
 @media screen and (max-width: 767px) {
   .rts-service-wrapper-two .single-service-item {
@@ -17115,10 +17115,11 @@ textarea:focus-visible, input:focus-visible {
   position: absolute;
   inset: 0;
   background: #004638;
-  opacity: 0;
   z-index: -1;
   border-radius: 0;
-  transition: opacity 0.4s ease;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s ease;
 }
 .rts-service-wrapper-two .single-service-item:nth-child(1) {
   border-width: 0 1px 1px 0;
@@ -17180,7 +17181,7 @@ textarea:focus-visible, input:focus-visible {
   border-color: transparent;
 }
 .rts-service-wrapper-two .single-service-item:hover::before {
-  opacity: 1;
+  transform: scaleY(1);
 }
 .rts-service-wrapper-two .single-service-item:hover .icon svg path {
   fill: #B4E33D;
