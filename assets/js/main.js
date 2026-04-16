@@ -3,17 +3,16 @@
 1. headerSticky
 2. swiperActivation
 3. wowActive
-4. jaraLux
-5. backToTopInit
-7. magnificPopup
-8. mobileMenu
-9. desktopMenu
-10. stickySidebar
-11. preloader
-12. odoMeter
-13. smoothScroll
-14. videoActive
-15. gsapTextanim
+4. backToTopInit
+5. magnificPopup
+6. mobileMenu
+7. stickySidebar
+8. preloader
+9. odoMeter
+10. smoothScroll
+11. videoActive
+12. gsapTitleAnim
+13. revalImage
 
 ==================================================*/
 (function ($) {
@@ -34,7 +33,6 @@
       rtsJs.headerSticky();
       rtsJs.swiperActivation();
       rtsJs.wowActive();
-      rtsJs.jaraLux();
       rtsJs.backToTopInit();
       rtsJs.magnificPopup();
       rtsJs.mobileMenu();
@@ -279,21 +277,6 @@
     },
     wowActive: function () {
       new WOW().init();
-    },
-    jaraLux: function (e) {
-      $(document).ready(function () {
-        // Function to detect if the device is mobile
-        function isMobileDevice() {
-          return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        }
-
-        // Initialize jarallax only if it's not a mobile device
-        if (!isMobileDevice()) {
-          $('.jarallax').jarallax();
-        } else {
-          console.log('Jarallax skipped on mobile devices');
-        }
-      });
     },
     backToTopInit: function (e) {
       $(document).ready(function () {
