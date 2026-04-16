@@ -1,61 +1,37 @@
-/**
- *
- * Template : Greenaro HTML TEMPLATE
- * Author : ThemeWant
- * Author URI : https://themewant.com/
- *
- **/
-
 (function ($) {
     'use strict';
 
-    // Wait for document ready
-    $(document).ready(function() {
-        // Get the form.
-        var form = $('.contact__form-wrapper');
+    var form = $('.contact__form-wrapper');
 
-        // Get the messages div.
-        var formMessages = $('#form-messages');
+    var formMessages = $('#form-messages');
 
-        // Set up an event listener for the contact form.
-        $(form).on('submit', function (e) {
-            // Stop the browser from submitting the form.
-            e.preventDefault();
-            e.stopPropagation();
+    $(form).submit(function (e) {
+        e.preventDefault();
 
-            // Serialize the form data.
-            var formData = $(form).serialize();
+        var formData = $(form).serialize();
 
-            // Submit the form using AJAX.
-            $.ajax({
-                    type: 'POST',
-                    url: $(form).attr('action'),
-                    data: formData
-                })
-                .done(function (response) {
-                    // Make sure that the formMessages div has the 'success' class.
-                    $(formMessages).removeClass('error');
-                    $(formMessages).addClass('success');
+        $.ajax({
+            type: 'POST',
+            url: $(form).attr('action'),
+            data: formData
+        })
+        .done(function (response) {
 
-                    // Set the message text.
-                    $(formMessages).text(response);
+            formMessages.removeClass('error').addClass('success');
+            formMessages.text(response);
 
-                    // Clear the form.
-                    $('#fname, #lname, #email, #message').val('');
-                    $('#terms').prop('checked', false);
-                })
-                .fail(function (data) {
-                    // Make sure that the formMessages div has the 'error' class.
-                    $(formMessages).removeClass('success');
-                    $(formMessages).addClass('error');
+            $('#fname, #lname, #email, #message').val('');
+            $('#terms').prop('checked', false);
+        })
+        .fail(function (data) {
 
-                    // Set the message text.
-                    if (data.responseText !== '') {
-                        $(formMessages).text(data.responseText);
-                    } else {
-                        $(formMessages).text('Oops! An error occured and your message could not be sent.');
-                    }
-                });
+            formMessages.removeClass('success').addClass('error');
+
+            if (data.responseText !== '') {
+                formMessages.text(data.responseText);
+            } else {
+                formMessages.text('Oops! An error occured and your message could not be sent.');
+            }
         });
     });
 
