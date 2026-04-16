@@ -99,6 +99,7 @@
                     }
 
                     &.two {
+                         max-width: 850px;
                          @include mq($xs) {
                               font-size: 30px;
                               line-height: 1.3;

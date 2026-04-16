@@ -42,7 +42,7 @@
                position: absolute;
                width: 30px;
                height: 30px;
-               background: var(--heading-color-2);
+               background: #D7F448;
                border-radius: 50%;
                display: flex;
                align-items: center;
@@ -50,13 +50,10 @@
                cursor: pointer;
                transition: transform 0.3s ease;
 
-               &:hover {
-                    transform: scale(1.2);
-               }
-
                i {
-                    color: #000;
+                    color: #002524;
                     font-size: 14px;
+                    font-weight: 700;
                }
           }
 
@@ -89,13 +86,81 @@
 
 .map-tooltip {
      .tooltip-inner {
-          background: var(--heading-color-2) !important;
-          color: var(--rts-heading) !important;
-          font-weight: 600;
-          font-size: 14px;
-          padding: 6px 10px;
+          background: #7EEA57 !important;
+          color: #000000 !important;
+          font-size: 20px;
+          font-family: var(--font-primary);
+          font-weight: 500;
+          line-height: 1.1;
+          letter-spacing: -0.04em;
+          padding: 14px;
           border-radius: 6px;
           margin-bottom: 10px;
+          min-width: 180px;
+          max-width: 260px;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          white-space: normal;
+     }
+
+     .tooltip-inner .tt-name,
+     .tooltip-inner .tt-size {
+          display: inline-block;
+     }
+
+     .tooltip-inner .tt-name {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 1.1;
+          margin-bottom: -25px;
+     }
+
+     .tooltip-inner .tt-size {
+          font-size: 14px;
+          font-weight: 600;
+          color: rgba(0, 37, 36, 0.9);
+     }
+}
+
+.map-tooltip-two {
+     .tooltip-inner {
+          background: #DFFF03 !important;
+          color: var(--heading-color) !important;
+          font-size: 20px;
+          font-family: var(--font-primary);
+          font-weight: 500;
+          line-height: 1.1;
+          letter-spacing: -0.04em;
+          padding: 14px;
+          border-radius: 6px;
+          margin-bottom: 10px;
+          min-width: 180px;
+          max-width: 260px;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          white-space: normal;
+     }
+
+     .tooltip-inner .tt-name,
+     .tooltip-inner .tt-size {
+          display: inline-block;
+     }
+
+     .tooltip-inner .tt-name {
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 1.1;
+          margin-bottom: -25px;
+     }
+
+     .tooltip-inner .tt-size {
+          font-size: 14px;
+          font-weight: 600;
+          color: #666666;
      }
 }
 

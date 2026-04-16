@@ -81,7 +81,8 @@
                          width: 35px;
                          height: 35px;
                          background: var(--rts-white);
-                         color: var(--rts-heading);
+                         color: var(--heading-color);
+                         font-weight: 700;
                          border-radius: 50%;
                          display: flex;
                          align-items: center;
@@ -122,7 +123,7 @@
                }
 
                .title {
-                    margin-top: 60px;
+                    margin-top: 90px;
                     color: #fff;
                     font-size: 24px;
                     line-height: 30px;
@@ -143,7 +144,7 @@
                     height: 350px;
                }
 
-               img {
+               .images {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
@@ -152,27 +153,24 @@
 
                .title {
                     position: absolute;
-                    left: 30px;
-                    bottom: 30px;
+                    left: 0;
+                    bottom: 0;
                     color: #fff;
                     font-size: 24px;
+                    font-weight: var(--f-medium);
                     line-height: 32px;
+                    padding: 40px 30px;
 
                     @media(max-width:1600px) {
                          font-size: 20px;
                     }
-
-                    @media(max-width:1400px) {
-
-                         br {
-                              display: none;
-                         }
-                    }
                }
           }
 
-          &:hover img {
-               transform: scale(1.05);
+          &:hover {
+               .images {
+                    transform: scale(1.05);
+               }
           }
      }
 
@@ -224,11 +222,11 @@
                          font-size: 40px;
                          letter-spacing: -0.04em;
 
-                         @include mq($md){
+                         @include mq($md) {
                               font-size: 30px;
                          }
 
-                         @include mq($xs){
+                         @include mq($xs) {
                               font-size: 25px;
                          }
                     }
@@ -276,8 +274,10 @@
                     }
                }
 
-               &:hover img {
-                    transform: scale(1.05);
+               &:hover {
+                    .images {
+                         transform: scale(1.05);
+                    }
                }
           }
      }
@@ -408,10 +408,13 @@
 
 /* Custom tooltip style */
 .tooltipx .tooltip-inner {
-     background-color: var(--heading-color-2) !important;
+     background-color: #7EEA57 !important;
      color: var(--heading-color) !important;
-     padding: 6px 10px;
-     border-radius: 6px;
+     padding: 10px 20px;
+     border-radius: 20px;
+     font-size: 16px;
+     font-family: var(--font-primary);
+     font-weight: var(--f-medium);
 }
 
 /* Hide tooltip arrow */
