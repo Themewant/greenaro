@@ -14203,7 +14203,7 @@ textarea:focus-visible, input:focus-visible {
   height: max-content;
   width: max-content;
   display: inline-block;
-  color: var(--rts-black);
+  color: #004638;
   font-size: 20px;
   font-family: var(--font-primary);
   font-weight: 500;
