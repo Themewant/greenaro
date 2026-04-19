@@ -18990,7 +18990,7 @@ textarea:focus-visible, input:focus-visible {
 }
 .project__wrapper__2 .project__slide__item .img .info.style-2 {
   background: var(--rts-white);
-  border-radius: 6px;
+  border-radius: 20px;
   left: -100%;
   bottom: 30px;
   max-width: 490px;
