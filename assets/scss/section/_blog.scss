@@ -174,7 +174,7 @@
 
           .blog__details__list {
                padding: 0;
-               margin-bottom: 60px;
+               margin-bottom: 50px;
 
                li {
                     display: flex;
@@ -222,7 +222,11 @@
                background: var(--rts-white);
                padding: 16px 24px;
                border-radius: 20px;
-               margin-bottom: 60px;
+               margin-bottom: 40px;
+          }
+
+          .descs {
+               margin-bottom: 50px;
           }
 
           .title__two {
