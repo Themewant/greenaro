@@ -108,6 +108,16 @@
 
                .heading-title {
                     color: var(--rts-white);
+
+                    @include mq($lg){
+                         font-size: 40px;
+                    }
+
+                    @include mq($xs){
+                         font-size: 30px;
+                    }
+
+                    
                }
           }
 
