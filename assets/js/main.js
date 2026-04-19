@@ -1,18 +1,16 @@
 /*=== Javascript function indexing here ===========
 
-1. headerSticky
-2. swiperActivation
-3. wowActive
-4. backToTopInit
-5. magnificPopup
-6. mobileMenu
-7. stickySidebar
-8. preloader
-9. odoMeter
-10. smoothScroll
-11. videoActive
-12. gsapTitleAnim
-13. revalImage
+01. headerSticky()
+02. mobileMenu()
+03. swiperActivation()
+04. wowActive()
+05. magnificPopup()
+06. odoMeter()
+07. smoothScroll()
+08. videoActive()
+09. preloader()
+10. backToTopInit()
+
 
 ==================================================*/
 (function ($) {
@@ -24,27 +22,22 @@
       rtsJs.methods();
     },
     d: function (e) {
-      (this._window = $(window)),
-        (this._document = $(document)),
-        (this._body = $('body')),
-        (this._html = $('html'));
+      ((this._window = $(window)), (this._document = $(document)), (this._body = $('body')), (this._html = $('html')));
     },
     methods: function (e) {
       rtsJs.headerSticky();
+      rtsJs.mobileMenu();
       rtsJs.swiperActivation();
       rtsJs.wowActive();
-      rtsJs.backToTopInit();
       rtsJs.magnificPopup();
-      rtsJs.mobileMenu();
-      rtsJs.stickySidebar();
-      rtsJs.preloader();
       rtsJs.odoMeter();
       rtsJs.smoothScroll();
       rtsJs.videoActive();
       rtsJs.gsapTitleAnim();
-      rtsJs.revalImage();
+      rtsJs.preloader();
+      rtsJs.backToTopInit();
     },
-    // sticky Header
+
     headerSticky: function () {
       $(window).on('scroll', function () {
         var ScrollBarPostion = $(window).scrollTop();
@@ -54,6 +47,66 @@
           $('.header__function').removeClass('is__sticky');
         }
       });
+    },
+    mobileMenu: function () {
+      try {
+        // ===== Clone desktop menu =====
+        var menuClone = $('.mobile__menu__active > ul').clone();
+
+        // Add has-dropdown & chevron
+        menuClone.find('li').each(function () {
+          if ($(this).children('.sub-menu').length > 0) {
+            $(this).addClass('has-dropdown');
+
+            if ($(this).children('a').find('.chevron').length === 0) {
+              $(this).children('a').append('<span class="chevron"><i class="fas fa-chevron-right"></i></span>');
+            }
+          }
+        });
+
+        // Inject into offcanvas
+        $('.rts__offcanvas__mobile__menu nav').html(menuClone);
+
+        // ===== Hide all submenus initially =====
+        $('.rts__offcanvas__mobile__menu .sub-menu').hide();
+
+        // ===== Submenu toggle =====
+        $(document).on('click', '.rts__offcanvas__mobile__menu li.has-dropdown > a', function (e) {
+          e.preventDefault();
+          var parent = $(this).parent();
+          var subMenu = parent.children('.sub-menu');
+
+          if (parent.hasClass('active')) {
+            // Close current submenu
+            subMenu.stop(true, true).slideUp(400);
+            parent.removeClass('active');
+          } else {
+            // Open current submenu
+            subMenu.stop(true, true).slideDown(400);
+            parent.addClass('active');
+
+            // Close siblings
+            parent.siblings('.has-dropdown').removeClass('active').children('.sub-menu').stop(true, true).slideUp(400);
+          }
+        });
+
+        // ===== Offcanvas open =====
+        // Use correct selector from your HTML, e.g., rts__offcanvas__header-toggle
+        $(document).on('click', '.offcanvas-toggle', function (e) {
+          e.preventDefault();
+          $('.rts__offcanvas, .rts__offcanvas__overlay').addClass('active');
+        });
+
+        // ===== Offcanvas close (X button or overlay) =====
+        $(document).on('click', '.rts__offcanvas__toggle__close, .rts__offcanvas__overlay', function (e) {
+          e.preventDefault();
+          $('.rts__offcanvas, .rts__offcanvas__overlay').removeClass('active');
+        });
+
+        console.log('Mobile menu initialized successfully');
+      } catch (error) {
+        console.error('Mobile menu initialization failed:', error);
+      }
     },
     swiperActivation: function () {
       $(document).ready(function () {
@@ -71,7 +124,7 @@
             el: '.about-dot-pagination',
             clickable: true,
           },
-        })
+        });
         // BRAND SLIDER
         var swiper = new Swiper('.brand__slider', {
           slidesPerView: 6,
@@ -181,19 +234,23 @@
             },
           },
         });
-        // TEAM SLIDER 
+        // TEAM SLIDER
         var swiper = new Swiper('.team__item__slide', {
           slidesPerView: 4,
           spaceBetween: 30,
           loop: true,
-          speed: 2500,
+          speed: 1000,
           autoplay: {
-            delay: 1500,
+            delay: 3000,
             disableOnInteraction: false,
           },
           navigation: {
             nextEl: '.rts-btn-next',
             prevEl: '.rts-btn-prev',
+          },
+          pagination: {
+            el: '.rts-dot-pagination',
+            clickable: true,
           },
           breakpoints: {
             1400: {
@@ -208,7 +265,7 @@
             0: {
               slidesPerView: 1,
             },
-          }
+          },
         });
         // PROJECT SLIDER
         var swiper = new Swiper('.project__sliders', {
@@ -260,16 +317,10 @@
           //   disableOnInteraction: false,
           // },
           pagination: {
-            el: ".shop__pagination",
+            el: '.shop__pagination',
             clickable: true,
             renderBullet: function (index, className) {
-              return (
-                '<span class="' +
-                className +
-                '">' +
-                ("0" + (index + 1)) +
-                "</span>"
-              );
+              return '<span class="' + className + '">' + ('0' + (index + 1)) + '</span>';
             },
           },
         });
@@ -277,26 +328,6 @@
     },
     wowActive: function () {
       new WOW().init();
-    },
-    backToTopInit: function (e) {
-      $(document).ready(function () {
-        var backButton = $('#rts-back-to-top');
-        $(window).scroll(function () {
-          if ($(this).scrollTop() > 100) {
-            backButton.addClass('show');
-          } else {
-            backButton.removeClass('show');
-          }
-        });
-        backButton.on('click', function () {
-          $('html, body').animate(
-            {
-              scrollTop: 0,
-            },
-            1000
-          );
-        });
-      });
     },
     magnificPopup: function (e) {
       // Image Gallery Popup
@@ -317,77 +348,6 @@
         removalDelay: 160,
         preloader: false,
         fixedContentPos: false,
-      });
-    },
-    mobileMenu: function () {
-      try {
-        // ===== Clone desktop menu =====
-        var menuClone = $('.mobile__menu__active > ul').clone();
-
-        // Add has-dropdown & chevron
-        menuClone.find('li').each(function () {
-          if ($(this).children('.sub-menu').length > 0) {
-            $(this).addClass('has-dropdown');
-
-            if ($(this).children('a').find('.chevron').length === 0) {
-              $(this).children('a').append('<span class="chevron"><i class="fas fa-chevron-right"></i></span>');
-            }
-          }
-        });
-
-        // Inject into offcanvas
-        $('.rts__offcanvas__mobile__menu nav').html(menuClone);
-
-        // ===== Hide all submenus initially =====
-        $('.rts__offcanvas__mobile__menu .sub-menu').hide();
-
-        // ===== Submenu toggle =====
-        $(document).on('click', '.rts__offcanvas__mobile__menu li.has-dropdown > a', function (e) {
-          e.preventDefault();
-          var parent = $(this).parent();
-          var subMenu = parent.children('.sub-menu');
-
-          if (parent.hasClass('active')) {
-            // Close current submenu
-            subMenu.stop(true, true).slideUp(400);
-            parent.removeClass('active');
-          } else {
-            // Open current submenu
-            subMenu.stop(true, true).slideDown(400);
-            parent.addClass('active');
-
-            // Close siblings
-            parent.siblings('.has-dropdown').removeClass('active').children('.sub-menu').stop(true, true).slideUp(400);
-          }
-        });
-
-        // ===== Offcanvas open =====
-        // Use correct selector from your HTML, e.g., rts__offcanvas__header-toggle
-        $(document).on('click', '.offcanvas-toggle', function (e) {
-          e.preventDefault();
-          $('.rts__offcanvas, .rts__offcanvas__overlay').addClass('active');
-        });
-
-        // ===== Offcanvas close (X button or overlay) =====
-        $(document).on('click', '.rts__offcanvas__toggle__close, .rts__offcanvas__overlay', function (e) {
-          e.preventDefault();
-          $('.rts__offcanvas, .rts__offcanvas__overlay').removeClass('active');
-        });
-
-      } catch (error) {
-        console.error('Mobile menu initialization failed:', error);
-      }
-    },
-    stickySidebar: function (e) {
-      if (typeof $.fn.theiaStickySidebar !== 'undefined') {
-        $('.sticky-wrap .sticky-item').theiaStickySidebar({
-          additionalMarginTop: 100,
-        });
-      }
-    },
-    preloader: function () {
-      window.addEventListener("load", function () {
-        document.querySelector("body").classList.add("loaded");
       });
     },
     odoMeter: function () {
@@ -434,41 +394,45 @@
           {
             scrollTop: $($.attr(this, 'href')).offset().top,
           },
-          300
+          300,
         );
       });
     },
     videoActive: function () {
       $(document).on('click', '#myBtn', function () {
-        $("#myVideo").toggleClass("show");
+        $('#myVideo').toggleClass('show');
 
         const $btn = $(this);
-        const isFullSize = $btn.data("fullSize"); // Check if it's currently full size
+        const isFullSize = $btn.data('fullSize'); // Check if it's currently full size
 
         if (isFullSize) {
-          $btn.css({
-            opacity: "1",
-            width: $btn.data("originalWidth"), // Restore original width
-            height: $btn.data("originalHeight") // Restore original height
-          }).data("fullSize", false);
+          $btn
+            .css({
+              opacity: '1',
+              width: $btn.data('originalWidth'), // Restore original width
+              height: $btn.data('originalHeight'), // Restore original height
+            })
+            .data('fullSize', false);
         } else {
           // Store the original width and height before changing
-          $btn.data("originalWidth", $btn.css("width"));
-          $btn.data("originalHeight", $btn.css("height"));
+          $btn.data('originalWidth', $btn.css('width'));
+          $btn.data('originalHeight', $btn.css('height'));
 
-          $btn.css({
-            opacity: "0",
-            width: "100%", // Set to 100% width
-            height: "100%" // Set to 100% height
-          }).data("fullSize", true);
+          $btn
+            .css({
+              opacity: '0',
+              width: '100%', // Set to 100% width
+              height: '100%', // Set to 100% height
+            })
+            .data('fullSize', true);
         }
       });
       $(document).ready(function () {
-        var $video = $("#myVideo");
-        var $btn = $("#myBtn");
+        var $video = $('#myVideo');
+        var $btn = $('#myBtn');
 
         if ($video.length && $btn.length) {
-          $btn.on("click", function () {
+          $btn.on('click', function () {
             if ($video[0].paused) {
               $video[0].play();
             } else {
@@ -477,7 +441,6 @@
           });
         }
       });
-
     },
     gsapTitleAnim: function () {
       $(document).ready(function () {
@@ -494,16 +457,17 @@
           const hasTranslateX = element.hasAttribute('data-translateX');
           const hasTranslateY = element.hasAttribute('data-translateY');
 
-          const staggerAmount = parseFloat(element.getAttribute('data-stagger')) || 0.05;
+          const staggerAmount = parseFloat(element.getAttribute('data-stagger')) || 0.03;
           const translateXValue = hasTranslateX ? parseFloat(element.getAttribute('data-translateX')) : 20;
           const translateYValue = hasTranslateY ? parseFloat(element.getAttribute('data-translateY')) : false;
           const onScrollValue = parseInt(element.getAttribute('data-on-scroll') || '1', 10);
-          const delayValue = parseFloat(element.getAttribute('data-delay')) || 0.5;
+          const delayValue = 0.1;
+          const durationValue = 0.5;
           const easeType = element.getAttribute('data-ease') || 'power2.out';
 
           const splitText = new SplitType(element, { type: 'chars, words' });
           const config = {
-            duration: hasTranslateX && hasTranslateY ? 3 : 1,
+            duration: durationValue,
             delay: delayValue,
             autoAlpha: 0,
             ease: easeType,
@@ -525,7 +489,7 @@
           if (onScrollValue === 1) {
             config.scrollTrigger = {
               trigger: element,
-              start: 'top 85%',
+              start: 'top 90%',
             };
           }
 
@@ -533,34 +497,44 @@
         });
       });
     },
-    revalImage: function () {
-      if ($('.reveal').length) {
-        gsap.registerPlugin(ScrollTrigger);
-        let revealContainers = document.querySelectorAll(".reveal");
-        revealContainers.forEach((container) => {
-          let image = container.querySelector("img");
-          let tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: container,
-              toggleActions: "play none none none"
-            }
-          });
-          tl.set(container, {
-            autoAlpha: 1
-          });
-          tl.from(container, 1, {
-            xPercent: -100,
-            ease: Power2.out
-          });
-          tl.from(image, 1, {
-            xPercent: 100,
-            scale: 1,
-            delay: -1,
-            ease: Power2.out
-          });
+    preloader: function (e) {
+      // Hide preloader as soon as the DOM is ready
+      document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+          document.querySelector('body').classList.add('loaded');
+        }, 500);
+      });
+
+      // Also hide when window is fully loaded as a backup
+      window.addEventListener('load', function () {
+        document.querySelector('body').classList.add('loaded');
+      });
+
+      // Safety timeout: hide after 1 second max for best performance score
+      setTimeout(function () {
+        document.querySelector('body').classList.add('loaded');
+      }, 1000);
+    },
+    backToTopInit: function (e) {
+      $(document).ready(function () {
+        var backButton = $('#rts-back-to-top');
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) {
+            backButton.addClass('show');
+          } else {
+            backButton.removeClass('show');
+          }
         });
-      }
-    }
+        backButton.on('click', function () {
+          $('html, body').animate(
+            {
+              scrollTop: 0,
+            },
+            1000,
+          );
+        });
+      });
+    },
   };
   rtsJs.m();
 
@@ -577,8 +551,8 @@
   });
 
   // BOOTSTRAP TOOLTIPS
-  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-  tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-    new bootstrap.Tooltip(tooltipTriggerEl);
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 })(jQuery, window);

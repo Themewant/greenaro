@@ -1,38 +1,40 @@
-/* ---------------------
-All CSS Structure Follow this Order
-----------------------
+/* ----------------------------------
+All SCSS Structure Follow this Order
+-------------------------------------
 
-1. Variable
-1. mixin
-3. reset
-4. typography
-5. Spacing
-6. loader
-7. common
-8. animation
-9. input
-10. components
-11. common style
-12. banner
-13. about
-14. rooms
-15. testimonial
-16. video
-17. offer
-18. advance__search
-19. newsletter
-20. facility
-21. blog
-22. service
-23. team
-24. resturant-menu
-25. gallery
-26. event
-27. offcanvase__menu
-28. contact
-29. form
-30. footer
--------------*/
+ 1. variables
+ 2. mixin
+ 3. reset
+ 4. typography
+ 5. spacing
+ 6. animation
+ 7. common
+ 8. animation (repeat)
+ 9. input
+ 10. components
+ 11. header__top
+ 12. header
+ 13. offcanvase__menu
+ 14. banner
+ 15. about
+ 16. cta
+ 17. team
+ 18. blog
+ 19. choose
+ 20. service
+ 21. price
+ 22. testimonial
+ 23. map
+ 24. project
+ 25. brand
+ 26. process
+ 27. shop
+ 28. faqs
+ 29. contact
+ 30. footer
+
+
+---------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 :root {
   /* Text Color */
@@ -108,6 +110,10 @@ All CSS Structure Follow this Order
   3. Add accessible line-height
   4. Improve text rendering
 */
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -162,6 +168,7 @@ body {
   color: var(--rts-para);
   overflow-x: hidden;
   margin: 0 auto;
+  scroll-behavior: smooth;
 }
 
 a,
@@ -10548,6 +10555,7 @@ p:last-child {
   color: var(--rts-white);
 }
 
+.container,
 .container-1520,
 .container-1534,
 .container-1428,
@@ -14475,7 +14483,7 @@ textarea:focus-visible, input:focus-visible {
 }
 
 .loaded .loader-wrapper .loader-section.section-left, .loaded .loader-wrapper .loader-section.section-right {
-  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.5s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
   opacity: 0;
 }
 .loaded .loader-wrapper .loader {
@@ -14485,7 +14493,7 @@ textarea:focus-visible, input:focus-visible {
 .loaded .loader-wrapper {
   visibility: hidden;
   transform: translateY(-100%);
-  transition: all 0.3s 1s ease-out;
+  transition: all 0.3s 0.5s ease-out;
 }
 
 @keyframes spin {
@@ -17055,7 +17063,7 @@ textarea:focus-visible, input:focus-visible {
   }
 }
 .rts-service-wrapper .single-service .content .desc {
-  color: rgba(0, 0, 0, 0.9);
+  color: #6B7280;
   font-size: 15px;
   font-weight: var(--f-regular);
   line-height: 24px;
@@ -17954,6 +17962,11 @@ textarea:focus-visible, input:focus-visible {
   background-color: var(--rts-white);
   border-radius: 16px;
   transition: var(--transition);
+}
+@media screen and (max-width: 991px) {
+  .rts__price__area .price__item__wrapper .price__single__item .price__content {
+    padding: 60px 30px;
+  }
 }
 .rts__price__area .price__item__wrapper .price__single__item .price__content .title {
   color: #121212;
@@ -20102,4 +20115,4 @@ textarea:focus-visible, input:focus-visible {
 .rts__footer__area__two .footer__copyright__wrapper .footer__copyright .terms li a {
   color: var(--rts-white);
 }
-/*# sourceMappingURL=../maps/style.css.map */
+/*# sourceMappingURL=style.css.map */

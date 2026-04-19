@@ -38,6 +38,10 @@
                     border-radius: 16px;
                     transition: var(--transition);
 
+                    @include mq($md){
+                         padding: 60px 30px;
+                    }
+
                     .title {
                          color: #121212;
                          font-size: 32px;
