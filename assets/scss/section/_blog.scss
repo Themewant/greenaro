@@ -168,7 +168,7 @@
                margin-bottom: 20px;
 
                @include mq($xs) {
-                    font-size: 24px;
+                    font-size: 20px;
                }
           }
 
@@ -240,6 +240,14 @@
                     width: 2px;
                     height: 22px;
                     background: var(--rts-neon);
+
+                    @include mq($xs) {
+                         height: 16px;
+                    }
+               }
+
+               @include mq($xs) {
+                    font-size: 16px;
                }
           }
      }

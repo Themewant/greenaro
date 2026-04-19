@@ -16613,7 +16613,7 @@ textarea:focus-visible, input:focus-visible {
 }
 @media screen and (max-width: 575px) {
   .rts__blog__details__area .rts__blog__details__wrapper .title {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 .rts__blog__details__area .rts__blog__details__wrapper .blog__details__list {
@@ -16674,6 +16674,16 @@ textarea:focus-visible, input:focus-visible {
   width: 2px;
   height: 22px;
   background: var(--rts-neon);
+}
+@media screen and (max-width: 575px) {
+  .rts__blog__details__area .rts__blog__details__wrapper .title__two .line {
+    height: 16px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .rts__blog__details__area .rts__blog__details__wrapper .title__two {
+    font-size: 16px;
+  }
 }
 
 .rts__choose__area.area-one .section-title {
