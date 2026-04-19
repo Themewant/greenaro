@@ -41,7 +41,7 @@
           font-size: 56px;
           font-family: var(--font-primary);
           font-weight: var(--f-semi-bold);
-          line-height: 1;
+          line-height: 1.2;
 
           @include mq($xl) {
                font-size: 50px;
