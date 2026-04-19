@@ -102,8 +102,6 @@
           e.preventDefault();
           $('.rts__offcanvas, .rts__offcanvas__overlay').removeClass('active');
         });
-
-        console.log('Mobile menu initialized successfully');
       } catch (error) {
         console.error('Mobile menu initialization failed:', error);
       }
