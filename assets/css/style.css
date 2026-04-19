@@ -170,6 +170,11 @@ body {
   margin: 0 auto;
   scroll-behavior: smooth;
 }
+@media screen and (max-width: 767px) {
+  body {
+    overflow-x: hidden !important;
+  }
+}
 
 a,
 a:hover,
@@ -10742,6 +10747,12 @@ p:last-child {
 
 .wow {
   visibility: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .overflow-x-visible {
+    overflow-x: hidden !important;
+  }
 }
 
 .animated {

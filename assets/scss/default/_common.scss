@@ -378,3 +378,9 @@
 .wow {
     visibility: hidden;
 }
+
+.overflow-x-visible {
+    @include mq($sm){
+        overflow-x: hidden !important;
+    }
+}

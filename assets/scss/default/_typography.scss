@@ -12,6 +12,10 @@ body {
   overflow-x: hidden;
   margin: 0 auto;
   scroll-behavior: smooth;
+
+  @include mq($sm){
+      overflow-x: hidden !important;
+  }
 }
 
 a,
